@@ -1,9 +1,12 @@
+import react from 'react';
+import PropTypes from 'prop-types';
+
 import { Grid, Link, Typography, Box, IconButton } from '@material-ui/core';
 import { Instagram, Facebook, Youtube, Linkedin, Twitter } from '@icons-pack/react-simple-icons';
-import styles from '../styles/footerStyle';
+import { withStyles } from "@material-ui/core/styles";
+import styles from './footerStyle';
 
-function Footer() {
-  const classes = styles();
+function Footer({ classes }) {
 
   const iconProps = {
     className: classes.icon,
@@ -60,4 +63,8 @@ function Footer() {
   )
 }
 
-export default Footer;
+Footer.propTypes = {
+  classes: PropTypes.object.isRequired,
+}
+
+export default withStyles(styles)(Footer);
