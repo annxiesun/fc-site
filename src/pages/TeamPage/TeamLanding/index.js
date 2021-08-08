@@ -13,7 +13,7 @@ import styles from './styles';
 // Instruction Card: formats instruction into card format
 // returns JSX component
 function InstructionCard({ classes, instruction }) {
-  const { index, icon, title, desc } = instruction; // `instruction` must have all these props
+  const { index, icon, header, desc } = instruction; // `instruction` must have all these props
 
   return (
     <Grid container item xs={12} md={4} className={classes.instructionCardWrapper}>
@@ -23,7 +23,7 @@ function InstructionCard({ classes, instruction }) {
           {icon}
         </Grid>
         <Grid>
-          <Typography variant="h4" className={classes.mb_3}>{title}</Typography>
+          <Typography variant="h4" className={classes.mb_3}>{header}</Typography>
           <Typography variant="body1">{desc}</Typography>
         </Grid>
       </div>
