@@ -1,3 +1,14 @@
+/******************************************************************
+
+
+UNFINISHED & UNORGANIZED,
+
+WILL COME BACK AFTER FINISHING OTHER PAGES, NEEDED BREAK
+MORE ORGANIZED SECTIONS: ABOUTPAGE & TEAMPAGE
+
+
+/******************************************************************/
+
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';

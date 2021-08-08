@@ -4,6 +4,7 @@ import classNames from 'classnames';
 
 import { Grid, Typography } from '@material-ui/core';
 import { withStyles } from "@material-ui/core/styles";
+import { text } from './content'
 
 import styles from './styles';
 

@@ -7,8 +7,10 @@ import { withStyles } from "@material-ui/core/styles";
 
 import styles from './styles';
 
+// TabPanel: creates tab that's shown when it's value is selected
+// returns JSX
 function TabPanel({ classes, role, value, index }) {
-  const { title, positions, desc, requirements } = role;
+  const { title, positions, desc, requirements } = role; // `role` must have these props
 
   return (
     <div
@@ -39,6 +41,8 @@ TabPanel.propTypes = {
   value: PropTypes.any.isRequired,
 };
 
+// tabProps: formats propTypes for TabPanels
+// returns object
 function tabProps(index) {
   return {
     id: `vertical-tab-${index}`,
@@ -47,8 +51,9 @@ function tabProps(index) {
 }
 
 function TeamRole({ classes, sector }) {
-  const [value, setValue] = useState(0);
+  const [value, setValue] = useState(0); // the selected role, indexed from roles
 
+  // when user clicks new role, sets value, which changes the TabPanel
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
@@ -57,6 +62,7 @@ function TeamRole({ classes, sector }) {
     <Container maxWidth="lg">
       <Grid container>
         <Grid container className={classes.mb_6}>
+          {/* ROLE BUTTONS (TABS) */}
           <Grid item xs={12} md={4} className={classes.px_5}>
             <Tabs
               orientation="vertical"
@@ -75,6 +81,7 @@ function TeamRole({ classes, sector }) {
               ))}
             </Tabs>
           </Grid>
+          {/* ROLE DESCRIPTIONS (TABPANELS) */}
           <Grid item xs={12} md={8}>
             {sector.roles.map((role, i) => (
               <TabPanel classes={classes} value={value} index={i} role={role} />
@@ -88,7 +95,7 @@ function TeamRole({ classes, sector }) {
 
 TeamRole.propTypes = {
   classes: PropTypes.object.isRequired,
-  sector: PropTypes.object.isRequired,
+  sector: PropTypes.object.isRequired, // object that has the information needed to be displayed, one of sectors found in jobSectors.js
 }
 
 export default withStyles(styles)(TeamRole);

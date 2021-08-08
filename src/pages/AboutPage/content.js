@@ -1,4 +1,7 @@
 /* eslint-disable no-multi-str */
+
+// ALL THE COPY IN THE ABOUT PAGE
+
 export const text = {
   BE_THE_CHANGE: {
     header: 'be the change.',

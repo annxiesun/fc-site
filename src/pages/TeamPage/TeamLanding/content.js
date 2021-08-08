@@ -2,7 +2,7 @@ import InfoOutlinedIcon from '@material-ui/icons/InfoOutlined';
 import AssignmentIcon from '@material-ui/icons/Assignment';
 import ScheduleIcon from '@material-ui/icons/Schedule';
 
-export const headers = {
+export const text = {
   APPLICATION_PROCCES:{ header: 'Application Process', desc: 'Every academic year, applications are opened for Directors, Executives, and Models. There are a lot of opportunities to get involved at Fashion for Change! We welcome everyone, new and returning members, to apply to a position that interests you.' },
   OUR_TEAMS: { header: 'Our Teams', desc: 'Each team has a different focus and function in building our annual charity fashion show. Click to find out more about each team and its positions.' },
   MEET_DIRECTORS: { header: 'Meet Our Directors', desc: null }

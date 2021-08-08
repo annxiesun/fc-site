@@ -6,12 +6,14 @@ import { useRouteMatch, Link } from "react-router-dom";
 import { Container, Grid, Typography, Button } from '@material-ui/core';
 import { withStyles } from "@material-ui/core/styles";
 
-import { headers, processGeneral } from '../content.js';
+import { text, processGeneral } from './content.js';
 import { sectors } from '../jobSectors';
 import styles from './styles';
 
+// Instruction Card: formats instruction into card format
+// returns JSX component
 function InstructionCard({ classes, instruction }) {
-  const { index, icon, title, desc } = instruction;
+  const { index, icon, title, desc } = instruction; // `instruction` must have all these props
 
   return (
     <Grid container item xs={12} md={4} className={classes.instructionCardWrapper}>
@@ -35,18 +37,20 @@ InstructionCard.propTypes = {
 }
 
 function TeamLanding({ classes }) {
-  let { url } = useRouteMatch();
+  let { url } = useRouteMatch(); // gets URL to link to sub-routes
 
   return (
     <Container maxWidth="lg">
       <Grid container justify="center">
+        {/* HEADER 1*/}
         <Grid item xs={12}>
-          <Typography variant="h2" align="center">{headers.APPLICATION_PROCCES.header}</Typography>
+          <Typography variant="h2" align="center">{text.APPLICATION_PROCCES.header}</Typography>
         </Grid>
         <Grid item xs={8} className={classes.mb_5}>
-          <Typography variant="body1" align="center">{headers.APPLICATION_PROCCES.desc}</Typography>
+          <Typography variant="body1" align="center">{text.APPLICATION_PROCCES.desc}</Typography>
         </Grid>
 
+        {/* Instruction Card Container */}
         <Grid container className={classNames(classes.instructionCardContainer, classes.mb_5)}>
           {processGeneral.map((instruction, i) => {
             return (
@@ -55,13 +59,15 @@ function TeamLanding({ classes }) {
           })}
         </Grid>
 
+        {/* HEADER 2*/}
         <Grid item xs={12}>
-          <Typography variant="h2" align="center">{headers.OUR_TEAMS.header}</Typography>
+          <Typography variant="h2" align="center">{text.OUR_TEAMS.header}</Typography>
         </Grid>
         <Grid item xs={8} className={classes.mb_5}>
-          <Typography variant="body1" align="center">{headers.OUR_TEAMS.desc}</Typography>
+          <Typography variant="body1" align="center">{text.OUR_TEAMS.desc}</Typography>
         </Grid>
 
+        {/* Button container, each links to their respective TeamRole page */}
         <Grid container className={classes.mb_5}>
           {sectors.map((sector) => (
             <Grid item xs={4} className={classNames(classes.p_2, classes.borderBox)}>
@@ -72,8 +78,9 @@ function TeamLanding({ classes }) {
           ))}
         </Grid>
 
+        {/* MEET DIRECTORS SECTION */}
         <Grid item xs={12}>
-          <Typography variant="h2" align="center">{headers.MEET_DIRECTORS.header}</Typography>
+          <Typography variant="h2" align="center">{text.MEET_DIRECTORS.header}</Typography>
         </Grid>
       </Grid>
     </Container>
