@@ -1,3 +1,4 @@
+import './App.css';
 import LandingPage from "./pages/LandingPage/index";
 import AboutPage from "./pages/AboutPage/index";
 import StyleGuide from "./pages/StyleGuide";
