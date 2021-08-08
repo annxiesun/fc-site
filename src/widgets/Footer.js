@@ -1,4 +1,4 @@
-import react from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 
 import { Grid, Link, Typography, Box, IconButton } from '@material-ui/core';
@@ -17,7 +17,7 @@ function Footer({ classes }) {
     { label: 'Facebook', icon: <Facebook {...iconProps} />, href: '#' },
     { label: 'Youtube', icon: <Youtube {...iconProps} />, href: '#' },
     { label: 'Linkedin', icon: <Linkedin {...iconProps} />, href: '#' },
-    { label: 'Twitter',icon: <Twitter {...iconProps} />, href: '#' }
+    { label: 'Twitter', icon: <Twitter {...iconProps} />, href: '#' }
   ]
   const sections = [
     { label: 'About Us', links: [{ display: 'Link', href: '#' }, { display: 'Link', href: '#' }, { display: 'Link', href: '#' }] },

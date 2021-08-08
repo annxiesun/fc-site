@@ -251,9 +251,6 @@ const styles = (theme) => ({
   pt_4: {
     paddingTop: theme.spacing(4),
   },
-  pt_4: {
-    paddingBottom: theme.spacing(4),
-  },
   pr_4: {
     paddingRight: theme.spacing(4),
   },

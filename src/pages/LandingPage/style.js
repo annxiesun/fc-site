@@ -1,4 +1,3 @@
-import theme from '../../styles/masterTheme';
 import { themeGenerator } from '../../styles/themeGenerator';
 
 const styles = (theme) => (themeGenerator(theme, {
@@ -22,7 +21,6 @@ const styles = (theme) => (themeGenerator(theme, {
     position: "absolute",
     zIndex: "2",
     transform: "translateZ(3px) scale(0.625) translateY(-200px)",
-    position: "absolute",
     transformOrigin: "0 50%",
     width: '100%',
   },
@@ -54,12 +52,9 @@ const styles = (theme) => (themeGenerator(theme, {
     position: "absolute",
     zIndex: "2",
     transform: "translateZ(3px) scale(0.625) translateY(-200px)",
-    position: "absolute",
     transformOrigin: "0 50%",
     width: '100%',
   },
-
-
 
   titleSection: {
     justifyContent: "center",
