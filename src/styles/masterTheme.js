@@ -5,6 +5,11 @@ const theme = createMuiTheme({
     text: {
       primary: "#ffffff",
       secondary: "#ffffff"
+    },
+    primary: {
+      light: '#e6f0ff',
+      main: '#adcfff',
+      dark: '#3b8cff'
     }
   },
   typography: {
@@ -41,13 +46,15 @@ const theme = createMuiTheme({
       fontWeight: 'bold',
     },
     h5: {
-
+      fontSize: '18px',
     },
     h6: {
 
     },
     subtitle1: {
-
+      fontSize: '16px',
+      fontWeight: 'bold',
+      textTransform: 'uppercase',
     },
     subtitle2: {
 

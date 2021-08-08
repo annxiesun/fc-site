@@ -1,16 +1,26 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
+import { Route } from "react-router-dom";
 
-import { roles } from './roles';
+import { sectors } from './jobSectors';
 
-import TeamsLanding from './TeamsLanding/index';
+import TeamLanding from './TeamLanding/index';
+import TeamRole from './TeamRole';
 
 function TeamPage() {
-  const [selectedRole, setSelectedRole] = useState(roles[0].value);
+  const [selectedRole, setSelectedRole] = useState(sectors[0].value);
 
+  //<TeamsLanding setSelectedRole={setSelectedRole} />
   return (
-    <TeamsLanding setSelectedRole={setSelectedRole} />
+    <>
+      <Route path="/">
+        <TeamLanding setSelectedRole={setSelectedRole} />
+      </Route>
+      <Route path="/roles">
+        <TeamRole selectedRole={selectedRole} />
+      </Route>
+    </>
   )
 }
 
