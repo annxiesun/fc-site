@@ -6,7 +6,7 @@ import { useRouteMatch, Link } from "react-router-dom";
 import { Container, Grid, Typography, Button } from '@material-ui/core';
 import { withStyles } from "@material-ui/core/styles";
 
-import { headers, processGeneral } from '../teamsContent.js';
+import { headers, processGeneral } from '../content.js';
 import { sectors } from '../jobSectors';
 import styles from './styles';
 
@@ -65,7 +65,7 @@ function TeamLanding({ classes }) {
         <Grid container className={classes.mb_5}>
           {sectors.map((sector) => (
             <Grid item xs={4} className={classNames(classes.p_2, classes.borderBox)}>
-              <Link to={`${url}/${sector.path}`}>
+              <Link to={`${url}/${sector.path}`} className={classes.linkWrapper}>
                 <Button className={classes.roleButton} variant="outlined">{sector.label}</Button>
               </Link>
             </Grid>

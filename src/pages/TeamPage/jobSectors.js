@@ -52,54 +52,72 @@ export const sectors = [
           'Must have previously been part of Fashion for Change'
         ]
       },
-    ]
+    ],
+    processes: [],
+    faqs: [],
   },
   {
     label: 'Finance',
     path: 'finance',
     value: 1,
-    roles: []
+    roles: [],
+    processes: [],
+    faqs: [],
   },
   {
     label: 'Stage',
     path: 'stage',
     value: 2,
-    roles: []
+    roles: [],
+    processes: [],
+    faqs: [],
   },
   {
     label: 'Artistic',
     path: 'artistic',
     value: 3,
-    roles: []
+    roles: [],
+    processes: [],
+    faqs: [],
   },
   {
     label: 'Models',
     path: 'models',
     value: 4,
-    roles: []
+    roles: [],
+    processes: [],
+    faqs: [],
   },
   {
     label: 'Sponsorships',
     path: 'sponsorships',
     value: 5,
-    roles: []
+    roles: [],
+    processes: [],
+    faqs: [],
   },
   {
     label: 'Events',
     path: 'events',
     value: 6,
-    roles: []
+    roles: [],
+    processes: [],
+    faqs: [],
   },
   {
     label: 'Marketing',
     path: 'marketing',
     value: 7,
-    roles: []
+    roles: [],
+    processes: [],
+    faqs: [],
   },
   {
     label: 'Public Relations',
     path: 'public_relations',
     value: 8,
-    roles: []
+    roles: [],
+    processes: [],
+    faqs: [],
   },
 ]

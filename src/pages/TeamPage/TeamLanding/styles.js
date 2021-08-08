@@ -17,6 +17,10 @@ const styles = (theme) => (themeGenerator(theme, {
     borderRadius: '8px',
     padding: theme.spacing(3),
   },
+  linkWrapper: {
+    color: 'none',
+    textDecoration: 'none',
+  },
   roleButton: {
     width: '100%',
     padding: theme.spacing(3),
