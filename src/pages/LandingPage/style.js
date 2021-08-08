@@ -38,8 +38,11 @@ const styles = (theme) => (themeGenerator(theme, {
     background: 'linear-gradient(180deg, rgba(0,0,0,1) 50%, rgba(255,255,255,0) 100%, rgba(2,0,36,1) 002993%)',
     height: '100vh',
     width: '100vw',
+    transform: 'translateY(-20px)'
   },
   header: {
+    marginTop: theme.spacing(10),
+    marginBottom:  theme.spacing(20),
     zIndex: '1',
     width: '100%',
   },

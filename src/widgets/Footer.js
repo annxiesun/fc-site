@@ -55,7 +55,7 @@ function Footer({ classes }) {
       </Box>
       <Box clone p={3} m="auto">
         <Grid container alignItems="center" direction="column" spacing={2}>
-          <img className={classes.logo} src="https://github.com/annxiesun/images/blob/main/logo2.png?raw=true" />
+          <img alt="fashionforchange logo" className={classes.logo} src="https://github.com/annxiesun-2/fc-images/blob/main/fc_logo.png?raw=true" />
           <Typography className={classes.gutterTop}>© Fashion for Change 2021</Typography>
         </Grid>
       </Box>
