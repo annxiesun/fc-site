@@ -1,17 +1,17 @@
 import { themeGenerator } from '../../styles/themeGenerator';
 
 const styles = (theme) => (themeGenerator, {
-  footerContainer: {
-    maxWidth: '1000px',
-  },
-  icon: {
-    color: 'white',
-  },
   logo: {
-    width: '200px',
+    height: 'auto',
+    width: '40px'
   },
-  gutterTop: {
-    marginTop: theme.spacing(2),
+  link: {
+    margin: theme.spacing(0, 3),
+    textDecoration: 'none',
+    textTransform: 'uppercase'
+  },
+  navBar: {
+    padding: theme.spacing(3),
   }
 });
 
