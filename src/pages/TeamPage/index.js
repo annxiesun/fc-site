@@ -1,23 +1,21 @@
-import React from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
-import { Grid, Typography } from '@material-ui/core';
-import { withStyles } from "@material-ui/core/styles";
+import { roles } from './roles';
 
-import styles from './styles';
+import TeamsLanding from './TeamsLanding/index';
 
+function TeamPage() {
+  const [selectedRole, setSelectedRole] = useState(roles[0].value);
 
-function SponsorPage({ classes }) {
   return (
-    <Grid>
-      <Typography>Hi</Typography>
-    </Grid>
+    <TeamsLanding setSelectedRole={setSelectedRole} />
   )
 }
 
-SponsorPage.propTypes = {
+TeamPage.propTypes = {
   classes: PropTypes.object.isRequired,
 }
 
-export default withStyles(styles)(SponsorPage);
+export default TeamPage;

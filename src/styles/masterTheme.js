@@ -53,7 +53,7 @@ const theme = createMuiTheme({
 
     },
     body1: {
-
+      fontSize: '16px',
     },
     body2: {
 
