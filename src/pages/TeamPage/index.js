@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
-import { Route } from "react-router-dom";
+import { Route, useRouteMatch } from "react-router-dom";
 
 import { sectors } from './jobSectors';
 
@@ -9,17 +9,18 @@ import TeamLanding from './TeamLanding/index';
 import TeamRole from './TeamRole';
 
 function TeamPage() {
-  const [selectedRole, setSelectedRole] = useState(sectors[0].value);
+  let { path } = useRouteMatch();
 
-  //<TeamsLanding setSelectedRole={setSelectedRole} />
   return (
     <>
-      <Route path="/">
-        <TeamLanding setSelectedRole={setSelectedRole} />
+      <Route exact path={path}>
+        <TeamLanding />
       </Route>
-      <Route path="/roles">
-        <TeamRole selectedRole={selectedRole} />
-      </Route>
+      {sectors.map((sector) => (
+        <Route path={`${path}/${sector.path}`}>
+          <TeamRole sector={sector} />
+        </Route>
+      ))}
     </>
   )
 }

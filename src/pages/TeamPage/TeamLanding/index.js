@@ -34,7 +34,9 @@ InstructionCard.propTypes = {
   instruction: PropTypes.object.isRequired,
 }
 
-function TeamLanding({ classes, setSelectedRole }) {
+function TeamLanding({ classes }) {
+  let { url } = useRouteMatch();
+
   return (
     <Container maxWidth="lg">
       <Grid container justify="center">
@@ -63,8 +65,8 @@ function TeamLanding({ classes, setSelectedRole }) {
         <Grid container className={classes.mb_5}>
           {sectors.map((sector) => (
             <Grid item xs={4} className={classNames(classes.p_2, classes.borderBox)}>
-              <Link to={`${''}/roles`}>
-                <Button onClick={() => setSelectedRole(sector.value)} className={classes.roleButton} variant="outlined">{sector.label}</Button>
+              <Link to={`${url}/${sector.path}`}>
+                <Button className={classes.roleButton} variant="outlined">{sector.label}</Button>
               </Link>
             </Grid>
           ))}
@@ -80,7 +82,6 @@ function TeamLanding({ classes, setSelectedRole }) {
 
 TeamLanding.propTypes = {
   classes: PropTypes.object.isRequired,
-  setSelectedRole: PropTypes.func.isRequired,
 }
 
 export default withStyles(styles)(TeamLanding);

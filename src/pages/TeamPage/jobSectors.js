@@ -2,6 +2,7 @@
 export const sectors = [
   {
     label: 'Board of Directors',
+    path: 'directors',
     value: 0,
     roles: [
       {
@@ -55,41 +56,49 @@ export const sectors = [
   },
   {
     label: 'Finance',
+    path: 'finance',
     value: 1,
     roles: []
   },
   {
     label: 'Stage',
+    path: 'stage',
     value: 2,
     roles: []
   },
   {
     label: 'Artistic',
+    path: 'artistic',
     value: 3,
     roles: []
   },
   {
     label: 'Models',
+    path: 'models',
     value: 4,
     roles: []
   },
   {
     label: 'Sponsorships',
+    path: 'sponsorships',
     value: 5,
     roles: []
   },
   {
     label: 'Events',
+    path: 'events',
     value: 6,
     roles: []
   },
   {
     label: 'Marketing',
+    path: 'marketing',
     value: 7,
     roles: []
   },
   {
     label: 'Public Relations',
+    path: 'public_relations',
     value: 8,
     roles: []
   },

@@ -6,7 +6,6 @@ import { Container, Grid, Tab, Tabs, Typography } from '@material-ui/core';
 import { withStyles } from "@material-ui/core/styles";
 
 import styles from './styles';
-import { sectors } from '../jobSectors';
 
 function TabPanel({ classes, role, value, index }) {
   const { title, positions, desc, requirements } = role;
@@ -47,14 +46,12 @@ function tabProps(index) {
   };
 }
 
-function TeamRole({ classes, selectedRole }) {
+function TeamRole({ classes, sector }) {
   const [value, setValue] = useState(0);
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
-
-  const sector = sectors[selectedRole];
 
   return (
     <Container maxWidth="lg">
@@ -91,7 +88,7 @@ function TeamRole({ classes, selectedRole }) {
 
 TeamRole.propTypes = {
   classes: PropTypes.object.isRequired,
-  selectedRole: PropTypes.number.isRequired,
+  sector: PropTypes.object.isRequired,
 }
 
 export default withStyles(styles)(TeamRole);
