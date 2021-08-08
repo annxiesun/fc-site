@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import { Grid, Link, Typography, Box, IconButton } from '@material-ui/core';
 import { Instagram, Facebook, Youtube, Linkedin, Twitter } from '@icons-pack/react-simple-icons';
 import { withStyles } from "@material-ui/core/styles";
-import styles from './footerStyle';
+import styles from './style';
 
 function Footer({ classes }) {
 
@@ -27,7 +27,7 @@ function Footer({ classes }) {
   ]
 
   return (
-    <>
+    <div className={classes.borderBox}>
       <Box clone p={3} m="auto">
         <Grid container direction="row" className={classes.footerContainer}>
           {sections.map((section) => (
@@ -43,7 +43,7 @@ function Footer({ classes }) {
         </Grid>
       </Box>
       <Box clone p={3} m="auto">
-        <Grid container justify="center" spacing={2}>
+        <Grid container justify="center">
           {socials.map((social) => (
             <Box clone m={1} key={social.label}>
               <IconButton href={social.href}>
@@ -54,12 +54,12 @@ function Footer({ classes }) {
         </Grid>
       </Box>
       <Box clone p={3} m="auto">
-        <Grid container alignItems="center" direction="column" spacing={2}>
-          <img alt="fashionforchange logo" className={classes.logo} src="https://github.com/annxiesun-2/fc-images/blob/main/fc_logo.png?raw=true" />
+        <Grid container alignItems="center" direction="column">
+          <img alt="fashionforchange logo" className={classes.logo} src="https://github.com/annxiesun-2/fc-images/blob/main/fc_logo_wordmark.png?raw=true" />
           <Typography className={classes.gutterTop}>© Fashion for Change 2021</Typography>
         </Grid>
       </Box>
-    </>
+    </div>
   )
 }
 

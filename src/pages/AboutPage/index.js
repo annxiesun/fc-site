@@ -5,8 +5,6 @@ import classNames from 'classnames';
 import { Grid, Typography } from '@material-ui/core';
 import { withStyles } from "@material-ui/core/styles";
 
-import Footer from "../../widgets/Footer";
-
 import styles from './styles';
 
 
@@ -73,7 +71,6 @@ function AboutPage({ classes }) {
           <Typography variant="body1" align="right">Established in 1991, FACS Foundation has been addressing the most urgent needs of families in the Waterloo community by providing numerous different support programs. Donations are used to allow children to continue schooling, to provide groceries and other necessities, as neglect. FACS Foundation has a vision of creating a caring and supportive community that allows children and families to thrive while focusing on 4 elements of a person’s well-being: physical, spiritual, emotional, and mental.</Typography>
         </Grid>
       </Grid>
-      <Footer />
     </>
   )
 }

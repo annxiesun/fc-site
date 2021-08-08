@@ -1,4 +1,4 @@
-import { themeGenerator } from '../styles/themeGenerator';
+import { themeGenerator } from '../../styles/themeGenerator';
 
 const styles = (theme) => (themeGenerator, {
   footerContainer: {

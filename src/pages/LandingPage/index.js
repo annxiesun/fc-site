@@ -6,7 +6,6 @@ import { Typography, Grid, Button, Container } from "@material-ui/core";
 
 import { withStyles } from '@material-ui/styles';
 import styles from './style';
-import Footer from "../../widgets/Footer";
 
 function LandingPage({ classes }) {
 
@@ -39,11 +38,9 @@ function LandingPage({ classes }) {
 
   /*
 
-          <Button variant="outlined" size="large" >Experience the Show</Button>*/
-  return (
-    <>
-      <div className={classes.wrapper}>
-        <Grid className={classes.section} container direction="column" alignItems="center">
+          <Button variant="outlined" size="large" >Experience the Show</Button>
+          
+                  <Grid className={classes.section} container direction="column" alignItems="center">
           <Typography className={classes.header} variant="h1" align="center">fashion for change</Typography>
           <Button className={classes.button} variant="outlined" size="large" >Experience the Show</Button>
           <div className={classes.fg_1}>
@@ -62,26 +59,28 @@ function LandingPage({ classes }) {
           <img className={classes.fg_2} src={images[1].foreground} />
           <img className={classes.bg} src={images[1].background} />
         </div>
-        <div>
-          <div>
+        */
+  return (
+    <>
+      <div className={classes.wrapper}>
+        <Grid container alignItems="center">
+          <Grid item xs={12} md={6}>
             <Typography className="title" variant="h2">Proud Charity Partner</Typography>
             <Typography className="desc" variant="body1">{content[1]}</Typography>
-          </div>
-          <Button>Find out more</Button>
-          <img src={photos[0]} />
-        </div>
-        <Container>
-          <Grid container direction="row" justify="center">
-            {displayStats.map((stat) => (
-              <Grid item container key={stat.label} direction="column" alignItems="center" xs={12} sm={3}>
-                <Typography variant="h3">{stat.prefix}{stat.value}</Typography>
-                <Typography variant="body1">{stat.label}</Typography>
-              </Grid>
-            ))}
+            <Button>Find out more</Button>
           </Grid>
-        </Container>
-        <div style={{ backgroundColor: 'black', width: '100vw', height: '100vh' }} />
-        <Footer />
+          <Grid item xs={12} md={6}>
+            <img className={classes.photo} src={photos[0]} />
+          </Grid>
+        </Grid>
+        <Grid container direction="row" justify="center">
+          {displayStats.map((stat) => (
+            <Grid item container key={stat.label} direction="column" alignItems="center" xs={12} sm={3}>
+              <Typography variant="h3">{stat.prefix}{stat.value}</Typography>
+              <Typography variant="body1">{stat.label}</Typography>
+            </Grid>
+          ))}
+        </Grid>
       </div>
     </>
   )

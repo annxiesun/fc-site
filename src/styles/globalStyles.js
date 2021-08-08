@@ -319,8 +319,11 @@ const styles = (theme) => ({
   },
   pl_7: {
     paddingLeft: theme.spacing(7),
+  },
+  /* BOX-SIZING */
+  borderBox: {
+    boxSizing: 'border-box'
   }
-
 });
 
 export default styles;
