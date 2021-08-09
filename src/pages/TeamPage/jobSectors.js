@@ -52,9 +52,6 @@ export const sectors = [
           'Must have previously been part of Fashion for Change'
         ]
       },
-      {
-        desc: ''
-      }
     ],
     processes: [
       {

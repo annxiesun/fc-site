@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
-import { Grid, Typography } from '@material-ui/core';
+import { Grid, Hidden, Typography } from '@material-ui/core';
 import { withStyles } from "@material-ui/core/styles";
 
 import { text, images } from './content'
@@ -15,9 +15,9 @@ function AboutPage({ classes }) {
     <>
       {/* FIRST SECTION */}
       <div className={classNames(classes.headerSection)}>
-        <Grid container justify="flex-end" className={classes.p_7}>
+        <Grid container justify="flex-end" className={classes.p_7} className={classes.floatingText}>
           <Grid item container justify="flex-end" xs={12} className={classes.foreground}>
-            <Typography variant="h1">{text.BE_THE_CHANGE.header}</Typography>
+            <Typography variant="h1" align="right">{text.BE_THE_CHANGE.header}</Typography>
           </Grid>
           <Grid xs={12} md={6} className={classes.foreground}>
             <Typography className={classes.desc} variant="body1" align="right">{text.BE_THE_CHANGE.desc}</Typography>
@@ -28,7 +28,7 @@ function AboutPage({ classes }) {
 
       {/* SECOND SECTION */}
       <div className={classNames(classes.headerSection)}>
-        <Grid container justify="flex-end" className={classes.p_5}>
+        <Grid container justify="flex-end" className={classes.p_5} className={classes.floatingText}>
           <Grid item container justify="flex-end" xs={6} className={classes.foreground}>
             <Typography variant="h2" align="left">{text.EMPOWERING_STUDENT_ART.header}</Typography>
           </Grid>
@@ -38,17 +38,21 @@ function AboutPage({ classes }) {
 
       {/* THIRD SECTION */}
       <Grid container>
-        <Grid item xs={12} md={6} className={classes.infoContainer}>
-          <img className={classes.photo} src={images.PHOTO1.src} alt={images.PHOTO1.alt} />
+        <Grid container>
+          <Grid item xs={12} md={6} className={classes.infoContainerImage}>
+            <img className={classes.photo} src={images.PHOTO1.src} alt={images.PHOTO1.alt} />
+          </Grid>
+          <Grid xs={12} md={6} className={classes.infoContainerText}>
+            <Typography variant="h2">{text.CREATING_TIGHT_KNIT.header}</Typography>
+          </Grid>
         </Grid>
-        <Grid xs={12} md={6} className={classes.infoContainer}>
-          <Typography variant="h2">{text.CREATING_TIGHT_KNIT.header}</Typography>
-        </Grid>
-        <Grid xs={12} md={6} className={classes.infoContainer}>
-          <Typography variant="h2">{text.ACTING_LOCALLY.header}</Typography>
-        </Grid>
-        <Grid xs={12} md={6} className={classes.infoContainer}>
-          <img className={classes.photo} src={images.PHOTO2.src} alt={images.PHOTO2.alt} />
+        <Grid container>
+          <Grid xs={12} md={6} className={classes.infoContainerText}>
+            <Typography variant="h2">{text.ACTING_LOCALLY.header}</Typography>
+          </Grid>
+          <Grid xs={12} md={6} className={classes.infoContainerImage}>
+            <img className={classes.photo} src={images.PHOTO2.src} alt={images.PHOTO2.alt} />
+          </Grid>
         </Grid>
       </Grid>
 

@@ -4,15 +4,22 @@ const styles = (theme) => (themeGenerator(theme, {
   backgroundImage: {
     width: '100vw',
     height: 'auto',
-    position: 'absolute',
-    top: 0,
-    left: 0,
     zIndex: 0,
   },
   headerSection: {
     position: 'relative',
     width: '100vw',
-    height: '180vh',
+    height: 'auto',
+    marginBottom: theme.spacing(10),
+  },
+  floatingText: {
+    position: 'absolute',
+    top: '10vh',
+    right: '5vw',
+    [theme.breakpoints.down('md')]: {
+      position: 'static',
+      padding: theme.spacing(5),
+    }
   },
   section: {
     width: '100vw',
@@ -24,9 +31,19 @@ const styles = (theme) => (themeGenerator(theme, {
   photo: {
     width: '100%',
   },
-  infoContainer: {
+  infoContainerImage: {
     padding: theme.spacing(9),
-    boxSizing: 'border-box'
+    boxSizing: 'border-box',
+    [theme.breakpoints.down('md')]: {
+      order: '2'
+    }
+  },
+  infoContainerText: {
+    padding: theme.spacing(9),
+    boxSizing: 'border-box',
+    [theme.breakpoints.down('md')]: {
+      order: '1'
+    }
   },
   filmStrip: {
     width: '100%'
