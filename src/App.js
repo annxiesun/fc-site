@@ -6,14 +6,13 @@ import TeamPage from "./pages/TeamPage/index";
 
 import StyleGuide from "./pages/StyleGuide";
 
-import Navbar from './widgets/Navbar';
+import Navbar, { NavbarOffset } from './widgets/Navbar';
 import Footer from './widgets/Footer';
 
 import {
   BrowserRouter as Router,
   Switch,
   Route,
-  Link
 } from "react-router-dom";
 
 function App() {
@@ -26,12 +25,15 @@ function App() {
             <StyleGuide />
           </Route>
           <Route path="/about-us">
+            <NavbarOffset />
             <AboutPage />
           </Route>
           <Route path="/sponsor-us">
+            <NavbarOffset />
             <SponsorPage />
           </Route>
           <Route path="/join">
+            <NavbarOffset />
             <TeamPage />
           </Route>
           <Route path="/">

@@ -3,6 +3,10 @@ import { themeGenerator } from '../../styles/themeGenerator';
 const styles = (theme) => (themeGenerator(theme, {
   section: {
     position: "relative",
+    minHeight: '1080px',
+    [theme.breakpoints.down('md')]: {
+      minHeight: '80vh',
+    }
   },
   fgImage: {
     width: "100%",
@@ -17,7 +21,7 @@ const styles = (theme) => (themeGenerator(theme, {
     height: "auto",
     objectFit: "cover",
     zIndex: 0,
-    [theme.breakpoints.down('md')]: {
+    [theme.breakpoints.down('sm')]: {
       height: '100vh'
     }
   },
@@ -25,19 +29,19 @@ const styles = (theme) => (themeGenerator(theme, {
     width: '100%',
     position: 'absolute',
     left: 0,
-    top: '300px',
+    top: '120px',
     zIndex: 1,
-    [theme.breakpoints.down('md')]: {
+    [theme.breakpoints.down('sm')]: {
       position: 'static'
     }
   },
   button: {
     position: 'absolute',
-    top: '500px',
+    top: '400px',
     left: '50%',
     transform: 'translate(-50%)',
     zIndex: 3,
-    [theme.breakpoints.down('md')]: {
+    [theme.breakpoints.down('sm')]: {
       position: 'static',
       transform: 'none',
       margin: theme.spacing(5),
@@ -46,15 +50,14 @@ const styles = (theme) => (themeGenerator(theme, {
     }
   },
   floatingText: {
-    marginTop: theme.spacing(10),
     position: "relative",
     width: '100%',
-    [theme.breakpoints.down('md')]: {
-      
+    [theme.breakpoints.down('sm')]: {
       position: 'absolute',
       display: 'flex',
       flexDirection: 'column',
-      alignItems: 'center'
+      alignItems: 'center',
+      marginTop: theme.spacing(15)
     }
   },
   photo: {

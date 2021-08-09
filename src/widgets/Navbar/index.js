@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import {
   Link,
-  useHistory
 } from "react-router-dom";
 import Lottie from "react-lottie";
 import classNames from 'classnames';
@@ -12,6 +11,12 @@ import { withStyles } from "@material-ui/core/styles";
 
 import { logo, links, menuAnimation } from './content';
 import styles from './style';
+
+export const NavbarOffset = () => {
+  return (
+    <div style={{ paddingTop: '100px' }} />
+  )
+}
 
 function SmallNavBar({ classes, open, setOpen }) {
   const [isStopped, setIsStopped] = useState(false);

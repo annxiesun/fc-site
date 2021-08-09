@@ -10,13 +10,16 @@ const styles = (theme) => (themeGenerator(theme, {
     position: 'relative',
     width: '100%',
     height: 'auto',
-    minHeight: '100vh',
+    minHeight: '1080px',
     marginBottom: theme.spacing(10),
+    [theme.breakpoints.down('md')]: {
+      minHeight: '80vh',
+    }
   },
   floatingText: {
     position: 'absolute',
     top: '10vh',
-    right: '5vw',
+    right: theme.spacing(10),
     [theme.breakpoints.down('md')]: {
       position: 'static',
       padding: theme.spacing(5),

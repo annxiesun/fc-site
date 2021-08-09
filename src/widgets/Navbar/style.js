@@ -13,6 +13,9 @@ const styles = (theme) => (themeGenerator (theme, {
   },
   navBar: {
     padding: theme.spacing(3),
+    position: 'absolute',
+    top: 0,
+    zIndex: 10,
   },
   navBarMobile: {
     position: 'absolute',
