@@ -1,6 +1,4 @@
 import React, { useState } from 'react';
-import PropTypes from 'prop-types';
-import classNames from 'classnames';
 import { Route, useRouteMatch } from "react-router-dom";
 
 import { sectors } from './jobSectors';
@@ -23,10 +21,6 @@ function TeamPage() {
       ))}
     </>
   )
-}
-
-TeamPage.propTypes = {
-  classes: PropTypes.object.isRequired,
 }
 
 export default TeamPage;

@@ -1,6 +1,6 @@
 import { themeGenerator } from '../../styles/themeGenerator';
 
-const styles = (theme) => (themeGenerator, {
+const styles = (theme) => (themeGenerator (theme, {
   footerContainer: {
     maxWidth: '1000px',
   },
@@ -13,6 +13,6 @@ const styles = (theme) => (themeGenerator, {
   gutterTop: {
     marginTop: theme.spacing(2),
   }
-});
+}));
 
 export default styles;
