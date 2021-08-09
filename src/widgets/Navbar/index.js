@@ -26,32 +26,36 @@ function SmallNavBar({ classes }) {
 
   return (
     <>
-      <Grid container justify="space-between" className={classes.navBar}>
-        <img alt="logo" className={classes.logo} src={logo} />
-        <IconButton aria-label="menu" onClick={onClick}>
-          <Lottie
-            options={menuAnimation}
-            width="40px"
-            height="40px"
-            isStopped={isStopped}
-            direction={open ? 1 : -1}
-            speed={1.5}
-          />
-        </IconButton>
+      <Grid container justify="space-between" className={classNames(classes.navBarMobile, open && classes.navBarMobileOpen)}>
+        <Grid item xs={10}>
+          <Collapse in={open}>
+            <>
+              {links.map((link) => (
+                <Grid item xs={12} container justify="flex-start" className={classNames(classes.p_2, classes.mb_2)}>
+                  <Link className={classes.link} to={link.to} onClick={() => setOpen(false)}>
+                    <Typography variant="body1" align="left">
+                      {link.label}
+                    </Typography>
+                  </Link>
+                </Grid>
+              ))}
+            </>
+          </Collapse>
+        </Grid>
+        <Grid item xs={2} container justify="flex-end" alignItems="flex-start">
+          <IconButton aria-label="menu" onClick={onClick}>
+            <Lottie
+              options={menuAnimation}
+              width="40px"
+              height="40px"
+              isStopped={isStopped}
+              direction={open ? 1 : -1}
+              speed={1.5}
+            />
+          </IconButton>
+        </Grid>
       </Grid>
-      <Collapse in={open}>
-        <>
-          {links.map((link) => (
-            <Grid item xs={12} container justify="center" className={classNames(classes.p_2, classes.mb_2)}>
-              <Link className={classes.link} to={link.to} onClick={() => setOpen(false)}>
-                <Typography>
-                  {link.label}
-                </Typography>
-              </Link>
-            </Grid>
-          ))}
-        </>
-      </Collapse>
+      <div className={classes.navBarOffset} />
     </>
   );
 }
@@ -94,7 +98,7 @@ function NavBar({ classes }) {
   );
 
   return (
-    <>{ mobile ? <SmallNavBar classes={classes} /> : largeNavBar }</>
+    <>{mobile ? <SmallNavBar classes={classes} /> : largeNavBar}</>
   )
 }
 

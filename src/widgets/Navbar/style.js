@@ -14,8 +14,17 @@ const styles = (theme) => (themeGenerator (theme, {
   navBar: {
     padding: theme.spacing(3),
   },
+  navBarMobile: {
+    position: 'absolute'
+  },
+  navBarMobileOpen: {
+    backgroundColor: theme.palette.common.black
+  },
   menuIcon: {
     color: theme.palette.common.white
+  },
+  navBarOffset: {
+    height: '50px'
   }
 }));
 
