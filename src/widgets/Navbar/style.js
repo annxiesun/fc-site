@@ -15,7 +15,8 @@ const styles = (theme) => (themeGenerator (theme, {
     padding: theme.spacing(3),
   },
   navBarMobile: {
-    position: 'absolute'
+    position: 'absolute',
+    zIndex: 10,
   },
   navBarMobileOpen: {
     backgroundColor: theme.palette.common.black
@@ -25,6 +26,14 @@ const styles = (theme) => (themeGenerator (theme, {
   },
   navBarOffset: {
     height: '50px'
+  },
+  overlay: {
+    position: 'absolute',
+    height: '100vh',
+    width: '100vw',
+    backgroundColor: theme.palette.common.black,
+    zIndex: 9,
+    opacity: 0.7,
   }
 }));
 

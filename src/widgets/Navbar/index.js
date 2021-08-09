@@ -13,8 +13,7 @@ import { withStyles } from "@material-ui/core/styles";
 import { logo, links, menuAnimation } from './content';
 import styles from './style';
 
-function SmallNavBar({ classes }) {
-  const [open, setOpen] = useState(false);
+function SmallNavBar({ classes, open, setOpen }) {
   const [isStopped, setIsStopped] = useState(false);
 
   const onClick = () => {
@@ -56,22 +55,27 @@ function SmallNavBar({ classes }) {
         </Grid>
       </Grid>
       <div className={classes.navBarOffset} />
+      {open && <div className={classes.overlay}></div>}
     </>
   );
 }
 
 SmallNavBar.propTypes = {
   classes: PropTypes.object.isRequired,
+  open: PropTypes.bool.isRequired,
+  setOpen: PropTypes.func.isRequired,
 }
 
 function NavBar({ classes }) {
   const [mobile, setMobile] = useState(false);
+  const [open, setOpen] = useState(false);
 
   const checkMobile = () => {
     if (window.innerWidth <= 960) {
       setMobile(true);
     } else {
       setMobile(false);
+      setOpen(false);
     }
   }
 
@@ -79,6 +83,14 @@ function NavBar({ classes }) {
     checkMobile();
     window.addEventListener("resize", checkMobile);
   });
+
+  useEffect(() => {
+    if (open) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+  }, [open]);
 
   const largeNavBar = (
     <Grid container justify="space-between" className={classes.navBar}>
@@ -98,7 +110,7 @@ function NavBar({ classes }) {
   );
 
   return (
-    <>{mobile ? <SmallNavBar classes={classes} /> : largeNavBar}</>
+    <>{mobile ? <SmallNavBar classes={classes} open={open} setOpen={setOpen} /> : largeNavBar}</>
   )
 }
 
