@@ -28,28 +28,28 @@ const theme = createMuiTheme({
     h1: {
       fontWeight: 'bold',
       fontSize: '128px',
-      "@media (max-width: 960px)": {
+      "@media (max-width: 1280px)": {
         fontSize: '64px',
       }
     },
     h2: {
       fontSize: '64px',
       fontWeight: 'bold',
-      "@media (max-width: 960px)": {
+      "@media (max-width: 1280px)": {
         fontSize: '48px',
       }
     },
     h3: {
       fontSize: '48px',
       fontWeight: 800,
-      "@media (max-width: 960px)": {
+      "@media (max-width: 1280px)": {
         fontSize: '24px',
       }
     },
     h4: {
       fontSize: '24px',
       fontWeight: 'bold',
-      "@media (max-width: 960px)": {
+      "@media (max-width: 1280px)": {
         fontSize: '18px',
       }
     },
@@ -96,6 +96,11 @@ const theme = createMuiTheme({
         fontSize: '32px',
         fontWeight: 'bold',
         letterSpacing: '0.2em'
+      }
+    },
+    MuiContainer: {
+      root: {
+        padding: '0 !important',
       }
     }
   }

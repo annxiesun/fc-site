@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
-import { Grid, Hidden, Typography } from '@material-ui/core';
+import { Container, Grid, Hidden, Typography } from '@material-ui/core';
 import { withStyles } from "@material-ui/core/styles";
 
 import { text, images } from './content'
@@ -12,7 +12,7 @@ import styles from './styles';
 function AboutPage({ classes }) {
 
   return (
-    <>
+    <Container maxWidth="xl">
       {/* FIRST SECTION */}
       <div className={classNames(classes.headerSection)}>
         <Grid container justify="flex-end" className={classes.p_7} className={classes.floatingText}>
@@ -75,7 +75,7 @@ function AboutPage({ classes }) {
           <Typography variant="body1" align="right">{text.FAMILY_AND_CHILD.desc}</Typography>
         </Grid>
       </Grid>
-    </>
+    </Container>
   )
 }
 

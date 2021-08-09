@@ -2,14 +2,15 @@ import { themeGenerator } from '../../styles/themeGenerator';
 
 const styles = (theme) => (themeGenerator(theme, {
   backgroundImage: {
-    width: '100vw',
+    width: '100%',
     height: 'auto',
     zIndex: 0,
   },
   headerSection: {
     position: 'relative',
-    width: '100vw',
+    width: '100%',
     height: 'auto',
+    minHeight: '100vh',
     marginBottom: theme.spacing(10),
   },
   floatingText: {
@@ -22,7 +23,7 @@ const styles = (theme) => (themeGenerator(theme, {
     }
   },
   section: {
-    width: '100vw',
+    width: '100%',
     height: 'auto',
   },
   foreground: {

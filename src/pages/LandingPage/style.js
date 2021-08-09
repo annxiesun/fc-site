@@ -1,60 +1,62 @@
 import { themeGenerator } from '../../styles/themeGenerator';
 
 const styles = (theme) => (themeGenerator(theme, {
-  wrapper: {
-    position: 'relative',
-    width: '100vw',
-    height: '100vh',
-    // perspective: '8px',
-    // perspectiveOrigin: '0%',
-  },
   section: {
     position: "relative",
-    height: "100vh",
+  },
+  fgImage: {
     width: "100%",
-  },
-  sectionImage: {
-    objectFit: "cover",
-  },
-  fg_1: {
-    position: "absolute",
-    zIndex: "2",
-    //transform: "translateZ(3px) scale(0.625) translateY(-200px)",
-    //transformOrigin: "0 50%",
-    width: '100%',
-  },
-  bg: {
-    top: 0,
-    left: 0,
-    width: "100vw",
     height: "auto",
-    position: "absolute",
-    objectPosition: 'bottom',
+    objectFit: "cover",
+    position: 'absolute',
+    zIndex: 2,
+    bottom: 0,
   },
-  blackCover: {
-    background: 'linear-gradient(180deg, rgba(0,0,0,1) 50%, rgba(255,255,255,0) 100%, rgba(2,0,36,1) 002993%)',
-    height: '100vh',
-    width: '100vw',
-    transform: 'translateY(-20px)'
+  bgImage: {
+    width: "100%",
+    height: "auto",
+    objectFit: "cover",
+    zIndex: 0,
+    [theme.breakpoints.down('md')]: {
+      height: '100vh'
+    }
   },
   header: {
-    marginTop: theme.spacing(10),
-    marginBottom:  theme.spacing(20),
-    zIndex: '1',
     width: '100%',
+    position: 'absolute',
+    left: 0,
+    top: '300px',
+    zIndex: 1,
+    [theme.breakpoints.down('md')]: {
+      position: 'static'
+    }
   },
   button: {
-    zIndex: '3',
+    position: 'absolute',
+    top: '500px',
+    left: '50%',
+    transform: 'translate(-50%)',
+    zIndex: 3,
+    [theme.breakpoints.down('md')]: {
+      position: 'static',
+      transform: 'none',
+      margin: theme.spacing(5),
+      fontSize: '16px',
+      width: '80%',
+    }
   },
-
-  fg_2: {
-    position: "absolute",
-    zIndex: "2",
-    transform: "translateZ(3px) scale(0.625) translateY(-200px)",
-    transformOrigin: "0 50%",
+  floatingText: {
+    marginTop: theme.spacing(10),
+    position: "relative",
     width: '100%',
+    [theme.breakpoints.down('md')]: {
+      
+      position: 'absolute',
+      display: 'flex',
+      flexDirection: 'column',
+      alignItems: 'center'
+    }
   },
-
   photo: {
     width: '100%',
     height: 'auto',
