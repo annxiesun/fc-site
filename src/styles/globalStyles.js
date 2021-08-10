@@ -323,6 +323,13 @@ const styles = (theme) => ({
   /* BOX-SIZING */
   borderBox: {
     boxSizing: 'border-box'
+  },
+  /* IMAGE POSITIONING */
+  imageCropLeft: {
+    objectPosition: '0% 0%',
+  },
+  imageCroprRight: {
+    objectPosition: '100% 0%',
   }
 });
 

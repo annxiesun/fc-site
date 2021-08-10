@@ -60,13 +60,24 @@ function LandingPage({ classes }) {
         */
   return (
     <Container maxWidth="xl">
-      <Grid container direction="column" alignItems="center" className={classes.section}>
-        <Grid className={classes.floatingText}>
+      <Grid container className={classes.section}>
+        <Grid className={classNames(classes.floatingText, classes.section1Text)} container direction="column" alignItems="center">
           <Typography className={classes.header} variant="h1" align="center">fashion for change</Typography>
           <Button className={classes.button} variant="outlined" size="large" >Experience the Show</Button>
         </Grid>
         <img className={classes.fgImage} src={images.SECTION1_FG.src} alt={images.SECTION1_FG.alt} />
         <img className={classes.bgImage} src={images.SECTION1_BG.src} alt={images.SECTION1_BG.alt} />
+      </Grid>
+      <Grid className={classes.section}>
+        <Grid className={classNames(classes.floatingText, classes.p_4, classes.section2Text)} container direction="column" alignItems="flex-end">
+          <Typography variant="h2" gutterBottom align="right" c>Artistic expression for good.</Typography>
+          <Grid item xs={12} md={4}>
+            <Typography variant="body1" align="right">{content[0]}</Typography>
+          </Grid>
+        </Grid>
+        <Button className="button">Find out more</Button>
+        <img className={classes.fgImage} src={images.SECTION2_FG.src} alt={images.SECTION2_FG.alt} />
+        <img className={classNames(classes.bgImage, classes.bgImage2)} src={images.SECTION2_BG.src} alt={images.SECTION2_BG.alt} />
       </Grid>
       <Grid container alignItems="center">
         <Grid item xs={12} md={6} className={classes.p_7}>
