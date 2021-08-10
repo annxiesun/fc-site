@@ -17,78 +17,48 @@ import { Button, Container, Grid, Typography } from "@material-ui/core";
 
 import { withStyles } from '@material-ui/styles';
 
-import { images } from './content'
+import { text, images, displayStats } from './content'
 import styles from './style';
 
 function LandingPage({ classes }) {
-
-  const content = [
-    'Fashion for Change is a non-profit organization that unites students from various universities to host the largest student-run charity fashion show in the K-W region. With over 130 executives and models yearly, our family is full of passionate students that use our talents to change the world! We use fashion, dance, film, music, and other mediums to promote artistic expression.',
-    'Every year, Fashion for Change chooses a charity to donate to. With over $110,000 in donations to date, we strive to allow students to help locally and globally. We are proud to be making a change both around the world, and right here at home.'
-  ];
-
-  const displayStats = [
-    { label: 'Money Raised', value: 110000, prefix: '$' },
-    { label: 'Sponsors', value: 0, prefix: '' },
-    { label: 'Number of Shows', value: 8, prefix: '' },
-    { label: 'Team Members', value: 0, prefix: '' }
-  ];
-
-  /*
-
-          <Button variant="outlined" size="large" >Experience the Show</Button>
-          
-                  <Grid className={classes.section} container direction="column" alignItems="center">
-          <Typography className={classes.header} variant="h1" align="center">fashion for change</Typography>
-          <Button className={classes.button} variant="outlined" size="large" >Experience the Show</Button>
-          <div className={classes.fg_1}>
-            <img className={classNames(classes.section, classes.sectionImage)} src={images[0].foreground} />
-            <div className={classes.blackCover}></div>
-          </div>
-          <img className={classNames(classes.section, classes.sectionImage, classes.bg)} src={images[0].background} />
-
-        </Grid>
-        <div className={classes.section}>
-          <div>
-            <Typography variant="h3" gutterBottom>Artistic expression for good.</Typography>
-            <Typography variant="body1">{content[0]}</Typography>
-          </div>
-          <Button className="button">Find out more</Button>
-          <img className={classes.fg_2} src={images[1].foreground} />
-          <img className={classes.bg} src={images[1].background} />
-        </div>
-        */
   return (
     <Container maxWidth="xl">
+      {/*SECTION 1*/}
       <Grid container className={classes.section}>
         <Grid className={classNames(classes.floatingText, classes.section1Text)} container direction="column" alignItems="center">
-          <Typography className={classes.header} variant="h1" align="center">fashion for change</Typography>
-          <Button className={classes.button} variant="outlined" size="large" >Experience the Show</Button>
+          <Typography className={classes.header} variant="h1" align="center">{text.FASHION_FOR_CHANGE}</Typography>
+          <Button className={classes.button} variant="outlined" size="large" >{text.EXPERIENCE_THE_SHOW}</Button>
         </Grid>
         <img className={classes.fgImage} src={images.SECTION1_FG.src} alt={images.SECTION1_FG.alt} />
         <img className={classes.bgImage} src={images.SECTION1_BG.src} alt={images.SECTION1_BG.alt} />
       </Grid>
+
+      {/*SECTION 2*/}
       <Grid className={classes.section}>
         <Grid className={classNames(classes.floatingText, classes.p_4, classes.section2Text)} container direction="column" alignItems="flex-end">
-          <Typography variant="h2" gutterBottom align="right" c>Artistic expression for good.</Typography>
+          <Typography variant="h2" gutterBottom align="right" c>{text.ARTISTIC_EXPRESSION.header}</Typography>
           <Grid item xs={12} md={4}>
-            <Typography variant="body1" align="right">{content[0]}</Typography>
+            <Typography variant="body1" align="right">{text.ARTISTIC_EXPRESSION.desc}</Typography>
           </Grid>
         </Grid>
         <Button className="button">Find out more</Button>
         <img className={classes.fgImage} src={images.SECTION2_FG.src} alt={images.SECTION2_FG.alt} />
         <img className={classNames(classes.bgImage, classes.bgImage2)} src={images.SECTION2_BG.src} alt={images.SECTION2_BG.alt} />
       </Grid>
+
+      {/*SECTION 3*/}
       <Grid container alignItems="center">
         <Grid item xs={12} md={6} className={classes.p_7}>
-          <Typography className="title" variant="h2">Proud Charity Partner</Typography>
-          <Typography className="desc" variant="body1">{content[1]}</Typography>
+          <Typography className="title" variant="h2">{text.CHARITY_PARTNER.header}</Typography>
+          <Typography className="desc" variant="body1">{text.CHARITY_PARTNER.desc}</Typography>
           <Button>Find out more</Button>
         </Grid>
         <Grid item xs={12} md={6} className={classes.p_7}>
           <img className={classes.photo} src={images.PHOTO_1.src} alt={images.PHOTO_1.alt} />
         </Grid>
       </Grid>
+
+      {/*STATS SECTION*/}
       <Grid container direction="row" justify="center">
         {displayStats.map((stat) => (
           <Grid item container key={stat.label} direction="column" alignItems="center" xs={12} sm={3}>
