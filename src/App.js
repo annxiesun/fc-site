@@ -6,6 +6,7 @@ import TeamPage from "./pages/TeamPage/index";
 
 import StyleGuide from "./pages/StyleGuide";
 
+import { ParallaxProvider } from 'react-scroll-parallax';
 import Navbar, { NavbarOffset } from './widgets/Navbar';
 import Footer from './widgets/Footer';
 
@@ -18,30 +19,32 @@ import {
 function App() {
   return (
     <div className="App">
-      <Router>
-        <Navbar />
-        <Switch>
-          <Route path="/style">
-            <StyleGuide />
-          </Route>
-          <Route path="/about-us">
-            <NavbarOffset />
-            <AboutPage />
-          </Route>
-          <Route path="/sponsor-us">
-            <NavbarOffset />
-            <SponsorPage />
-          </Route>
-          <Route path="/join">
-            <NavbarOffset />
-            <TeamPage />
-          </Route>
-          <Route path="/">
-            <LandingPage />
-          </Route>
-        </Switch>
-      </Router>
-      <Footer />
+      <ParallaxProvider>
+        <Router>
+          <Navbar />
+          <Switch>
+            <Route path="/style">
+              <StyleGuide />
+            </Route>
+            <Route path="/about-us">
+              <NavbarOffset />
+              <AboutPage />
+            </Route>
+            <Route path="/sponsor-us">
+              <NavbarOffset />
+              <SponsorPage />
+            </Route>
+            <Route path="/join">
+              <NavbarOffset />
+              <TeamPage />
+            </Route>
+            <Route path="/">
+              <LandingPage />
+            </Route>
+          </Switch>
+        </Router>
+        <Footer />
+      </ParallaxProvider>
     </div>
   );
 }

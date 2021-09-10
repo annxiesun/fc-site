@@ -12,6 +12,9 @@ MORE ORGANIZED SECTIONS: ABOUTPAGE & TEAMPAGE
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
+import { Parallax } from 'react-scroll-parallax';
+import { Fade, Rotate } from 'react-reveal';
+
 
 import { Button, Container, Grid, Typography } from "@material-ui/core";
 
@@ -30,19 +33,29 @@ function LandingPage({ classes }) {
           <Button className={classes.button} variant="outlined" size="large" >{text.EXPERIENCE_THE_SHOW}</Button>
         </Grid>
         <img className={classes.fgImage} src={images.SECTION1_FG.src} alt={images.SECTION1_FG.alt} />
-        <img className={classes.bgImage} src={images.SECTION1_BG.src} alt={images.SECTION1_BG.alt} />
+        <Parallax y={[-50, 50]}>
+          <img className={classes.bgImage} src={images.SECTION1_BG.src} alt={images.SECTION1_BG.alt} />
+        </Parallax>
       </Grid>
-
+      <div className={classes.blankBlock} />
       {/*SECTION 2*/}
       <Grid className={classes.section}>
-        <Grid className={classNames(classes.floatingText, classes.p_4, classes.section2Text)} container direction="column" alignItems="flex-end">
-          <Typography variant="h2" gutterBottom align="right" c>{text.ARTISTIC_EXPRESSION.header}</Typography>
-          <Grid item xs={12} md={4}>
-            <Typography variant="body1" align="right">{text.ARTISTIC_EXPRESSION.desc}</Typography>
-          </Grid>
+        <Grid className={classNames(classes.floatingText, classes.p_4, classes.section2Text)}>
+          <Fade right cascade>
+            <Typography variant="h2" gutterBottom align="right" c>{text.ARTISTIC_EXPRESSION.header}</Typography>
+            <Grid item xs={12} container justify="flex-end">
+              <Grid item xs={12} md={5}>
+              <Typography variant="body1" align="right">{text.ARTISTIC_EXPRESSION.desc}</Typography>
+              </Grid>
+            </Grid>
+            <Grid item xs={12} container justify="flex-end">
+              <Button className="button">Find out more</Button>
+            </Grid>
+          </Fade>
         </Grid>
-        <Button className="button">Find out more</Button>
-        <img className={classes.fgImage} src={images.SECTION2_FG.src} alt={images.SECTION2_FG.alt} />
+        <Parallax y={[-10, 10]} className={classes.fgImage} styleInner={{ height: '100vh' }}>
+          <img className={classes.fgImage} src={images.SECTION2_FG.src} alt={images.SECTION2_FG.alt} />
+        </Parallax>
         <img className={classNames(classes.bgImage, classes.bgImage2)} src={images.SECTION2_BG.src} alt={images.SECTION2_BG.alt} />
       </Grid>
 

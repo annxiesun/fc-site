@@ -330,6 +330,12 @@ const styles = (theme) => ({
   },
   imageCroprRight: {
     objectPosition: '100% 0%',
+  },
+  d_Flex: {
+    display: 'flex'
+  },
+  j_flexEnd: {
+    justify: 'flex-end'
   }
 });
 

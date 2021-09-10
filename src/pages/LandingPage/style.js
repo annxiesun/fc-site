@@ -4,9 +4,17 @@ const styles = (theme) => (themeGenerator(theme, {
   section: {
     position: "relative",
     minHeight: '1080px',
+    perspective: '8px',
     [theme.breakpoints.down('md')]: {
       minHeight: '80vh',
     }
+  },
+  blankBlock: {
+    height: '500px',
+    backgroundColor: theme.palette.common.black,
+    zIndex: 0,
+    position: 'absolute',
+    width: '100vw'
   },
     // HEADER SECTIONS CLASSES (header sections are sections with image backgrounds)
   fgImage: {
